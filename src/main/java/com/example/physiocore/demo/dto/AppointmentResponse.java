@@ -29,4 +29,5 @@ public class AppointmentResponse {
     private String hour;
     private String service;
     private String state;
+    private String annotation;
 }

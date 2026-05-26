@@ -49,7 +49,8 @@ public class AppoinmentService {
                                                 app.getProfessional().getId().toString(),
                                                 app.getHourValue(),
                                                 app.getService().getLabel(),
-                                                app.getState().getLabel()))
+                                                app.getState().getLabel(),
+                                                app.getAnnotation()))
                                 .toList();
         }
 
@@ -93,6 +94,7 @@ public class AppoinmentService {
                                                 .hour(appointment.getHourValue())
                                                 .service(appointment.getService().getLabel())
                                                 .state(appointment.getState().getLabel())
+                                                .annotation(appointment.getAnnotation())
                                                 .professionalFullName(
                                                                 appointment.getProfessional().getName() + " "
                                                                                 + appointment.getProfessional()
@@ -120,6 +122,7 @@ public class AppoinmentService {
                                                 .hour(appointment.getHourValue())
                                                 .service(appointment.getService().getLabel())
                                                 .state(appointment.getState().getLabel())
+                                                .annotation(appointment.getAnnotation())
                                                 .professionalFullName(
                                                                 appointment.getProfessional().getName() + " "
                                                                                 + appointment.getProfessional()
@@ -159,6 +162,7 @@ public class AppoinmentService {
                 appointment.setHourValue(data.getHour());
                 appointment.setService(data.getService());
                 appointment.setState(data.getState());
+                appointment.setAnnotation(data.getAnnotation());
 
                 Appointment updatedAppointment = appointmentRepository.save(appointment);
 
@@ -173,6 +177,7 @@ public class AppoinmentService {
                                 .hour(updatedAppointment.getHourValue())
                                 .service(updatedAppointment.getService().getLabel())
                                 .state(updatedAppointment.getState().getLabel())
+                                .annotation(updatedAppointment.getAnnotation())
                                 .build();
         }
 
@@ -192,6 +197,7 @@ public class AppoinmentService {
                                 .hour(appointment.getHourValue())
                                 .service(appointment.getService().getLabel())
                                 .state(appointment.getState().getLabel())
+                                .annotation(appointment.getAnnotation())
                                 .build();
         }
 
@@ -221,6 +227,7 @@ public class AppoinmentService {
                                                                                 + data.getProfessional().getSurname())
                                                 .hour(data.getHourValue())
                                                 .state(data.getState().getLabel())
+                                                .annotation(data.getAnnotation())
                                                 .build())
                                 .collect(Collectors.toList());
         }
@@ -238,6 +245,7 @@ public class AppoinmentService {
                                         .hour(data.getHourValue())
                                         .service(data.getService().getLabel())
                                         .state(data.getState().getLabel())
+                                        .annotation(data.getAnnotation())
                                         .build();
                 }).collect(Collectors.toList());
         }

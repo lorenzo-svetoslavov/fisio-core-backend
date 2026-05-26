@@ -16,4 +16,5 @@ public class AppointmentRequest {
     private String hour;
     private ClinicService service;
     private StatusAppointment state;
+    private String annotation;
 }
